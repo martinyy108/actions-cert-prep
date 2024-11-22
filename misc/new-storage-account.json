@@ -1,0 +1,37 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "bicep",
+      "version": "0.31.92.45157",
+      "templateHash": "4224208301510345786"
+    }
+  },
+  "parameters": {
+    "location": {
+      "type": "string",
+      "defaultValue": "eastus"
+    },
+    "storageAccountName": {
+      "type": "string",
+      "defaultValue": "twactionsstg1"
+    },
+    "replication": {
+      "type": "string",
+      "defaultValue": "LRS"
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Storage/storageAccounts",
+      "apiVersion": "2021-04-01",
+      "name": "[parameters('storageAccountName')]",
+      "location": "[parameters('location')]",
+      "sku": {
+        "name": "[parameters('replication')]"
+      },
+      "kind": "StorageV2"
+    }
+  ]
+}
