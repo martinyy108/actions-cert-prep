@@ -24,3 +24,4 @@ jobs:
           az account show
           # You can write your Azure CLI inline scripts here.
           az group create --name infra-rg --location australiaeast
+          az group create --name avd-rg --location australiaeast
